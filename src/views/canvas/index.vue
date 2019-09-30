@@ -95,7 +95,7 @@
                 oneList:[o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14],
                 threeList:[t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20],
                 oidx:Math.floor(Math.random()*14),
-                tidx:Math.floor(Math.random()*14),
+                tidx:Math.floor(Math.random()*20),
                 afterUp:false,
                 secBg:'',
                 threeBg:'',
@@ -131,10 +131,10 @@
                 // this.imgmsg=file.content
                 Toast.loading({mask: true, message: '上传中...',duration:0});
                let param = new FormData(),_self=this;
-               console.log(file, file.file, file.name)
+               console.log(file, file.file, file.name);
                param.append('file', file.file, file.name);
-               const imgs=document.createElement('img')
-                imgs.src=file.content
+               const imgs=document.createElement('img');
+                imgs.src=file.content;
                 imgs.onload=()=>{
                     EXIF.getData(imgs, function() {
                         _self.imgInfo = EXIF.getTag(this, "Orientation") ? EXIF.getTag(this, "Orientation") : 1;
